@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class Bat_RedScript : MonoBehaviour {
 
 	//public PlayerHP playerHp;
+	//github確認用
+	float tt;
 
 	// Use this for initialization
 	void Start () {
