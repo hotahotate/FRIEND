@@ -9,6 +9,8 @@ TagManager:
   - hit
   - boss2
   - boss1
+  - diary1
+  - diary2
   layers:
   - Default
   - TransparentFX

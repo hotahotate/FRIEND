@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour {
 
-	Rigidbody rb;
+	//Rigidbody rb;
 	//移動スピード
 	public float speed = 2f;
 	//ジャンプ力
@@ -17,7 +17,7 @@ public class PlayerScript : MonoBehaviour {
 
 	void Start()
 	{
-		rb = GetComponent<Rigidbody>();
+		//rb = GetComponent<Rigidbody>();
 		//UnityちゃんのAnimatorにアクセスする
 		animator = GetComponent<Animator>();
 	}

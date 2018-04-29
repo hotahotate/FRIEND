@@ -21,6 +21,9 @@ public class TextController : MonoBehaviour {
 
 	public GameObject panel;
 
+	//
+	//bool OkButton=false;
+
 	// Use this for initialization
 	public void StartText (string[] scenarios/*Text message*/) {
 		//add
@@ -34,8 +37,24 @@ public class TextController : MonoBehaviour {
 		TextUpdate ();
 	}
 
+	public void Click(){
+		if (flag == 1) {
+			//現在の行番号がラストまで行ってない状態でMボタンを押すとテキストを更新する
+			if (currentLine < scenarios2.Length) {
+				TextUpdate ();
+			} else {
+					//問題点:最後の行の文字列が表示されずに終了する
+					uiText.gameObject.SetActive (false);
+					panel.SetActive (false);
+					flag = 0;
+
+			}
+		}
+
+	}
+
 	// Update is called once per frame
-	void Update () {
+	/*void Update () {
 
 		if (flag == 1) {
 			//現在の行番号がラストまで行ってない状態でMボタンを押すとテキストを更新する
@@ -50,11 +69,13 @@ public class TextController : MonoBehaviour {
 				}
 			}
 		}
-	}
+	}*/
 
 	void TextUpdate(){
 		//現在の行番号をuiTextに流し込み、現在の行番号を一つ追加する
 		uiText.text = scenarios2 [currentLine];
 		currentLine++;
 	}
+
+
 }
