@@ -22,7 +22,7 @@ public class TextController : MonoBehaviour {
 	public GameObject panel;
 
 	//
-	//bool OkButton=false;
+	//Button GoButton;
 
 	// Use this for initialization
 	public void StartText (string[] scenarios/*Text message*/) {
@@ -34,27 +34,36 @@ public class TextController : MonoBehaviour {
 		uiText = message;
 		panel.SetActive (true);
 		uiText.gameObject.SetActive (true);
+		//GoButton=GameObject.Find ("Canvas/LeftButton/Go").GetComponent<Button> ();
+		//GoButton.interactable = false;
+		MoveMobile.GoFlag=false;
 		TextUpdate ();
+
 	}
 
 	public void Click(){
 		if (flag == 1) {
-			//現在の行番号がラストまで行ってない状態でMボタンを押すとテキストを更新する
+			//現在の行番号がラストまで行ってない状態でAボタンを押すとテキストを更新する
 			if (currentLine < scenarios2.Length) {
+				
 				TextUpdate ();
+				Debug.Log ("uhh");
 			} else {
 					//問題点:最後の行の文字列が表示されずに終了する
 					uiText.gameObject.SetActive (false);
 					panel.SetActive (false);
 					flag = 0;
-
+				//GoButton.interactable = true;
+				MoveMobile.GoFlag=true;
 			}
 		}
 
 	}
 
+	//PCで試すよう。Iphoneに操作切り替えるときはコメントアウトする
+	//ここから
 	// Update is called once per frame
-	/*void Update () {
+	void Update () {
 
 		if (flag == 1) {
 			//現在の行番号がラストまで行ってない状態でMボタンを押すとテキストを更新する
@@ -69,7 +78,9 @@ public class TextController : MonoBehaviour {
 				}
 			}
 		}
-	}*/
+	}
+
+	//ここまで
 
 	void TextUpdate(){
 		//現在の行番号をuiTextに流し込み、現在の行番号を一つ追加する

@@ -16,6 +16,8 @@ public class MoveMobile : MonoBehaviour {
 
 	GameObject poseController;
 
+	public static bool GoFlag=true;
+
 	void Start () {
 		//agent = GetComponent<NavMeshAgent> ();
 		animator = GetComponent<Animator>();
@@ -59,9 +61,11 @@ public class MoveMobile : MonoBehaviour {
 	}
 
 	public void GoButton(){
-		animator.SetBool ("Idle", false);
-		animator.SetBool ("Walk", true);
-		transform.position += transform.forward * speed * Time.deltaTime;
+		if (GoFlag) {
+			animator.SetBool ("Idle", false);
+			animator.SetBool ("Walk", true);
+			transform.position += transform.forward * speed * Time.deltaTime;
+		}
 	}
 
 	void OnTriggerEnter(Collider other){

@@ -7,13 +7,15 @@ public class PlayerScript : MonoBehaviour {
 
 	//Rigidbody rb;
 	//移動スピード
-	public float speed = 2f;
+	public float speed = 0.01f;
 	//ジャンプ力
 	public float thrust = 100;
 	//Animatorを入れる変数
 	private Animator animator;
 	//Planeに触れているか判定するため
 	bool ground;
+	//特定にキャラに遭遇したかどうか
+	public static bool charaFlag=false;
 
 	void Start()
 	{
@@ -36,7 +38,7 @@ public class PlayerScript : MonoBehaviour {
 			animator.SetBool ("Idle", true);
 		} else {
 			if (Input.GetKey ("up")) {
-				transform.position += transform.forward * 0.01f;
+				transform.position += transform.forward * 0.5f;
 				animator.SetBool ("Idle", false);
 				animator.SetBool ("Walk", true);
 			} 
@@ -52,10 +54,14 @@ public class PlayerScript : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other){
 		if (other.gameObject.tag == "boss1") {
-			SceneManager.LoadScene ("Battle1");
+			SceneManager.LoadScene ("Battle");
 		}
 		if (other.gameObject.tag == "boss2") {
 			SceneManager.LoadScene ("Battle2");
+		}
+		//うさぎフラグ用
+		if(other.gameObject.name=="Rabbit_Red_Sun"){
+			charaFlag = true;
 		}
 	}
 }

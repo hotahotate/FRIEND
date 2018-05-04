@@ -9,6 +9,7 @@ public class SelectButtonScript : MonoBehaviour {
 
 	public GameObject enemy;
 	public GameObject lifespan;
+	public Text enemyText;
 
 	private GameObject button1;
 	private GameObject button2;
@@ -18,6 +19,7 @@ public class SelectButtonScript : MonoBehaviour {
 	int flag=0;
 	int hitCount=3;
 	int missCount=0;
+	float timer=0f;
 
 
 	// Use this for initialization
@@ -33,7 +35,21 @@ public class SelectButtonScript : MonoBehaviour {
 		if (missCount == 3) {
 			SceneManager.LoadScene ("Stage1");
 		} else if (hitCount == 0) {
-			SceneManager.LoadScene ("Stage2");
+			button1.SetActive (false);
+			button2.SetActive (false);
+			button3.SetActive (false);
+			button4.SetActive (false);
+			timer += Time.deltaTime;
+			enemyText.text="初対面だと思ったが、どうやら私の思い違いだったようだ";
+			if (timer > 5f) {
+				enemyText.text="この部品を君に譲ろう";
+			}
+			if (timer > 10f) {
+				enemyText.text="ネジを手に入れた!";
+			}
+			if (timer > 15f) {
+				SceneManager.LoadScene ("Stage2");
+			}
 		}
 	}
 
@@ -60,6 +76,7 @@ public class SelectButtonScript : MonoBehaviour {
 			ChangeWord ();
 			flag = 1;
 			hitCount--;
+			enemyText.text="私の昔のあだ名は?";
 		} else {
 			//enemy.SendMessage("Recover");
 			lifespan.SendMessage ("DamageFromEnemy");
@@ -72,6 +89,7 @@ public class SelectButtonScript : MonoBehaviour {
 			ChangeWord2 ();
 			flag = 2;
 			hitCount--;
+			enemyText.text=" 私の最近の悩みは?";
 		} else {
 			//enemy.SendMessage("Recover");
 			missCount++;
@@ -83,14 +101,14 @@ public class SelectButtonScript : MonoBehaviour {
 		button1.GetComponentInChildren<Text>().text="消しゴム";
 		button2.GetComponentInChildren<Text>().text="定規";
 		button3.GetComponentInChildren<Text>().text="鉛筆";
-		button4.GetComponentInChildren<Text>().text="ハンカチ";
+		button4.GetComponentInChildren<Text>().text="レッドブルー";
 	}
 
 	public void ChangeWord2(){
-		button1.GetComponentInChildren<Text>().text="バラ";
-		button2.GetComponentInChildren<Text>().text="コスモス";
-		button3.GetComponentInChildren<Text>().text="ひまわり";
-		button4.GetComponentInChildren<Text>().text="桜";
+		button1.GetComponentInChildren<Text>().text="孤独な村人の事";
+		button2.GetComponentInChildren<Text>().text="昔の親友の事";
+		button3.GetComponentInChildren<Text>().text="息子の事";
+		button4.GetComponentInChildren<Text>().text="君の事";
 	}
 
 }
