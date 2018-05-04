@@ -29,8 +29,6 @@ public class DateControllerScript : MonoBehaviour {
 
 	public void SaveButton(){
 		PlayerPrefs.SetInt(key,PlayerHP.life);
-		//PlayerPrefs.SetString(key2,)
-		//sceneNo=SceneManager.GetActiveScene().name;
 		PlayerPrefs.SetString(sceneNo,SceneManager.GetActiveScene().name);
 		Debug.Log (SceneManager.GetActiveScene ().name);
 	}
