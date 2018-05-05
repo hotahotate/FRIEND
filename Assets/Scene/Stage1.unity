@@ -1122,13 +1122,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09344ac6623ea4bb7888a653440eddfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textcontroller: {fileID: 1649223233}
   scenarios:
   - "\u3053\u306E\u6751\u306E\u6751\u9577\u306F\u3001\u4ED6\u6240\u8005\u3068\u306F\u7D76\u5BFE\u306B\u8A71\u3092\u805E\u304B\u306A\u3044"
   - "\u983C\u307F\u3054\u3068\u304C\u3042\u308B\u306A\u3089\u3001\u4FE1\u7528\u3092\u5F97\u308B\u3053\u3068\u3060\u306A"
   - "\u5E74\u5BC4\u308A\u3060\u304B\u3089\u3001\u4F4F\u4EBA\u306E\u9854\u306F\u899A\u3048\u3061\u3083\u3044\u306A\u3044\u3002\u3060\u304B\u3089\u3001\u6751\u9577\u306B\u3064\u3044\u3066\u3088\u304F\u77E5\u3063\u3066\u308B\u3075\u308A\u3092\u3059\u308C\u3070\u3001\u4F4F\u4EBA\u3068\u601D\u3063\u3066\u304F\u308C\u308B\u304B\u3082\u306A"
   - "\u4FFA\u304B\u3089\u306E\u30D2\u30F3\u30C8\u306F\u4EE5\u4E0A\u3060!"
   heart: {fileID: 773869902}
+  iventScript: {fileID: 968352713}
 --- !u!1001 &104808914
 Prefab:
   m_ObjectHideFlags: 0
@@ -7220,7 +7220,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.015
   m_Center: {x: 0, y: 0.01, z: 0}
---- !u!114 &761844348
+--- !u!114 &761844350
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -7228,17 +7228,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 761844346}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10f788f8b1e6445d5a3f3be9d2a388ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 09344ac6623ea4bb7888a653440eddfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  is_pressing: 0
-  textcontroller: {fileID: 1649223233}
   scenarios:
   - "\u6751\u9577\u306B\u3064\u3044\u3066\u77E5\u308A\u305F\u3044\u3060\u3063\u3066?"
   - "\u3046\u30FC\u3093\u3002\u50D5\u3088\u308A\u3082\u50D5\u306E\u304A\u3058\u3044\u3061\u3083\u3093\u306E\u65B9\u304C\u8A73\u3057\u3044\u3068\u601D\u3046\u3088"
   - "\u50D5\u306E\u304A\u3058\u3044\u3061\u3083\u3093\u3068\u6751\u9577\u306F\u540C\u3044\u5E74\u3067\u6614\u304B\u3089\u306E\u89AA\u53CB\u306A\u3093\u3060"
   - "\u3042\u3063!\u50D5\u306E\u304A\u3058\u3044\u3061\u3083\u3093\u3001\u3082\u3046\u3059\u305084\u6B73\u306E\u8A95\u751F\u65E5\u306A\u3093\u3060!"
   - "\u3042\u3063\u305F\u3089\u307E\u305A\u3001\u304A\u8A95\u751F\u65E5\u304A\u3081\u3067\u3068\u3046\u3063\u3066\u8A00\u3063\u3066\u3042\u3052\u3066\u306D!"
+  heart: {fileID: 773869902}
+  iventScript: {fileID: 968352713}
 --- !u!4 &763856251 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: 0a7077d23568d41fe9de72b3f5b642a6, type: 3}
@@ -7930,7 +7930,7 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 88103812}
+      objectReference: {fileID: 968352713}
     - target: {fileID: 114853071415415552, guid: e215afa54978344bfab892b1326efea4,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -9539,6 +9539,12 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: 955c2b5800d3c43eebb1b9c182254317, type: 3}
   m_PrefabInternal: {fileID: 966996621}
+--- !u!114 &968352713 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114764390756925788, guid: e08d68a98d685415fa0d933d05d9151d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1422058062}
+  m_Script: {fileID: 11500000, guid: 528b4ded5dfa04b79bff4597de8bbb44, type: 3}
 --- !u!1001 &969969652
 Prefab:
   m_ObjectHideFlags: 0
@@ -13543,6 +13549,53 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cfd71611720260346920e9b33e19457a, type: 3}
   m_IsPrefabParent: 0
+--- !u!1001 &1422058062
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4816950310595222, guid: e08d68a98d685415fa0d933d05d9151d, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1.8671683
+      objectReference: {fileID: 0}
+    - target: {fileID: 4816950310595222, guid: e08d68a98d685415fa0d933d05d9151d, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 2.5859475
+      objectReference: {fileID: 0}
+    - target: {fileID: 4816950310595222, guid: e08d68a98d685415fa0d933d05d9151d, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -9.79174
+      objectReference: {fileID: 0}
+    - target: {fileID: 4816950310595222, guid: e08d68a98d685415fa0d933d05d9151d, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4816950310595222, guid: e08d68a98d685415fa0d933d05d9151d, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4816950310595222, guid: e08d68a98d685415fa0d933d05d9151d, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4816950310595222, guid: e08d68a98d685415fa0d933d05d9151d, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4816950310595222, guid: e08d68a98d685415fa0d933d05d9151d, type: 2}
+      propertyPath: m_RootOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114764390756925788, guid: e08d68a98d685415fa0d933d05d9151d,
+        type: 2}
+      propertyPath: textController
+      value: 
+      objectReference: {fileID: 1649223233}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: e08d68a98d685415fa0d933d05d9151d, type: 2}
+  m_IsPrefabParent: 0
 --- !u!4 &1427603487 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: 0a7077d23568d41fe9de72b3f5b642a6, type: 3}
@@ -15849,17 +15902,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.05, y: 0.025, z: 0.03}
   m_Center: {x: 0, y: 0.01, z: 0}
---- !u!114 &1687700327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1687700323}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46fc36b6bce894539978373fa33f2b65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1687729780
 Prefab:
   m_ObjectHideFlags: 0
@@ -17587,26 +17629,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4000014191901042, guid: f3e92f0e6c7c8724b98eded63b438981,
     type: 2}
   m_PrefabInternal: {fileID: 711447997}
---- !u!114 &1868766890
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1868766887}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10f788f8b1e6445d5a3f3be9d2a388ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  is_pressing: 0
-  textcontroller: {fileID: 1649223233}
-  scenarios:
-  - "\u3053\u306E\u304A\u5893\u306F\u3001\u6570\u65E5\u524D\u306B\u58CA\u308C\u305F\u5B50\u306E\u304A\u5893\u3060\u3088\u3002"
-  - "\u3053\u306E\u5B50\u3082\u541B\u3068\u540C\u3058\u30ED\u30DC\u30C3\u30C8\u3060\u3063\u305F\u3093\u3060\u3002"
-  - "\u4F5C\u3089\u308C\u305F\u6642\u304B\u3089\u4E0D\u826F\u54C1\u3060\u3063\u305F\u304B\u3089\u3001\u3053\u3093\u306A\u306B\u9577\u751F\u304D\u3059\u308B\u3068\u306F\u601D\u308F\u306A\u304B\u3063\u305F"
-  - "\u5F7C\u306E\u30D1\u30FC\u30C4\u306F\u601D\u3063\u305F\u3088\u308A\u3082\u826F\u3044\u306E\u304C\u591A\u304F\u3066\u306D"
-  - "\u3046\u3061\u306E\u6751\u306E\u6751\u9577\u304C\u5927\u4E8B\u306B\u4FDD\u7BA1\u3057\u3066\u308B\u3088"
-  - "\u5F7C\u306F\u5E78\u305B\u3060\u3063\u305F\u3088\u306D"
 --- !u!135 &1868766891
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -17619,6 +17641,26 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.015
   m_Center: {x: 0, y: 0.01, z: 0}
+--- !u!114 &1868766892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1868766887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09344ac6623ea4bb7888a653440eddfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scenarios:
+  - "\u3053\u306E\u304A\u5893\u306F\u3001\u6570\u65E5\u524D\u306B\u58CA\u308C\u305F\u5B50\u306E\u304A\u5893\u3060\u3088\u3002"
+  - "\u3053\u306E\u5B50\u3082\u541B\u3068\u540C\u3058\u30ED\u30DC\u30C3\u30C8\u3060\u3063\u305F\u3093\u3060\u3002"
+  - "\u4F5C\u3089\u308C\u305F\u6642\u304B\u3089\u4E0D\u826F\u54C1\u3060\u3063\u305F\u304B\u3089\u3001\u3053\u3093\u306A\u306B\u9577\u751F\u304D\u3059\u308B\u3068\u306F\u601D\u308F\u306A\u304B\u3063\u305F"
+  - "\u5F7C\u306E\u30D1\u30FC\u30C4\u306F\u601D\u3063\u305F\u3088\u308A\u3082\u826F\u3044\u306E\u304C\u591A\u304F\u3066\u306D"
+  - "\u3046\u3061\u306E\u6751\u306E\u6751\u9577\u304C\u5927\u4E8B\u306B\u4FDD\u7BA1\u3057\u3066\u308B\u3088"
+  - "\u5F7C\u306F\u5E78\u305B\u3060\u3063\u305F\u3088\u306D"
+  heart: {fileID: 773869902}
+  iventScript: {fileID: 968352713}
 --- !u!4 &1870328734 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: 0a7077d23568d41fe9de72b3f5b642a6, type: 3}
@@ -18457,6 +18499,8 @@ MonoBehaviour:
   - "\u306A\u306E\u306B\u3042\u3044\u3064\u306F\u6C17\u3065\u3044\u305F\u3089\u3001\u6751\u9577\u306B\u306A\u308B\u3060\u306E\u3068\u8A00\u3044\u51FA\u3057\u3066\u306E\u3002\u5102\u306F\u8A00\u3063\u305F\u3093\u3060\u3002\u304A\u524D\u306B\u306F\u5411\u3044\u3066\u306A\u3044\u3063\u3066\u306A\u3002"
   - "\u305D\u308C\u3067\u3042\u3044\u3064\u306B\u5931\u671B\u3055\u308C\u3066\u3001\u305D\u308C\u4EE5\u6765\u8A71\u3057\u3066\u306A\u3044\u3002"
   - "\u89AA\u53CB\u306A\u3089\u3001\u3042\u306E\u6642\u80CC\u4E2D\u3092\u62BC\u3057\u3066\u3084\u308B\u3079\u304D\u3060\u3063\u305F\u3093\u3060\u3002\u304A\u524D\u3055\u3093\u3082\u3001\u89AA\u53CB\u306F\u5927\u5207\u306B\u3057\u306A\u304D\u3083\u3044\u3051\u306A\u3044\u305E\u3002"
+  heart: {fileID: 773869902}
+  iventScript: {fileID: 968352713}
 --- !u!135 &1927831159
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -19845,7 +19889,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09344ac6623ea4bb7888a653440eddfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textcontroller: {fileID: 1649223233}
   scenarios:
   - "\u521D\u3081\u307E\u3057\u3066\u3060\u306D\u3002"
   - "\u50D5\u306E\u540D\u524D\u306F\u30B9\u30E9\u30A4\u30E0"
@@ -19854,6 +19897,7 @@ MonoBehaviour:
   - "\u541B\u306E\u5BFF\u547D\u306F\u4ECA\u3053\u306E\u6642\u3082\u6E1B\u308A\u7D9A\u3051\u3066\u308B"
   - "\u6025\u3044\u3060\u65B9\u304C\u3044\u3044\u3088"
   heart: {fileID: 773869902}
+  iventScript: {fileID: 968352713}
 --- !u!4 &2045167054 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: 0a7077d23568d41fe9de72b3f5b642a6, type: 3}
@@ -20531,23 +20575,6 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 100002, guid: 59afa1f2c595d6343b15e945602e1f8f, type: 3}
   m_PrefabInternal: {fileID: 2116877134}
---- !u!114 &2116877137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2116877136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10f788f8b1e6445d5a3f3be9d2a388ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  is_pressing: 0
-  textcontroller: {fileID: 1649223233}
-  scenarios:
-  - "\u6751\u9577\u306F\u79C1\u60C5\u3088\u308A\u3082\u3053\u306E\u6751\u306E\u4E8B\u3092\u7B2C\u4E00\u306B\u8003\u3048\u3066\u308B\u3093\u3060\u3002"
-  - "\u3053\u308C\u304C\u306A\u3093\u306E\u30D2\u30F3\u30C8\u306B\u306A\u308B\u304B\u3060\u3063\u3066?"
-  - "\u3055\u3042\u306D\u3002\u4FFA\u304C\u77E5\u308A\u305F\u3044\u3088\u3002"
 --- !u!65 &2116877138
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20560,6 +20587,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.05, y: 0.025, z: 0.03}
   m_Center: {x: 0, y: 0.01, z: 0}
+--- !u!114 &2116877140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2116877136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09344ac6623ea4bb7888a653440eddfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scenarios:
+  - "\u6751\u9577\u306F\u79C1\u60C5\u3088\u308A\u3082\u3053\u306E\u6751\u306E\u4E8B\u3092\u7B2C\u4E00\u306B\u8003\u3048\u3066\u308B\u3093\u3060\u3002"
+  - "\u3053\u308C\u304C\u306A\u3093\u306E\u30D2\u30F3\u30C8\u306B\u306A\u308B\u304B\u3060\u3063\u3066?"
+  - "\u3055\u3042\u306D\u3002\u4FFA\u304C\u77E5\u308A\u305F\u3044\u3088\u3002"
+  heart: {fileID: 773869902}
+  iventScript: {fileID: 968352713}
 --- !u!1001 &2127542517
 Prefab:
   m_ObjectHideFlags: 0
@@ -20716,25 +20760,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1000013175867634, guid: 9aad9de7cbca6d84b82891c3a1e63e34,
     type: 2}
   m_PrefabInternal: {fileID: 2133261781}
---- !u!114 &2133261783
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2133261782}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10f788f8b1e6445d5a3f3be9d2a388ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  is_pressing: 0
-  textcontroller: {fileID: 1649223233}
-  scenarios:
-  - "\u306A\u3093\u3067\u3053\u3093\u306A\u6240\u306B\u3044\u308B\u306E\u304B\u3060\u3063\u3066?"
-  - "\u3060\u3063\u3066\u3001\u50D5\u306F\u307F\u3093\u306A\u3088\u308A\u5927\u304D\u3044\u304B\u3089\u306D\u3002\u90AA\u9B54\u306B\u306A\u3089\u306A\u3044\u3088\u3046\u306B\u3053\u3053\u306B\u3044\u308B\u3093\u3060\u3088\u3002"
-  - "\u50D5\u3082\u541B\u307F\u305F\u3044\u306B\u306A\u308A\u305F\u3044\u306A\u3002\u30ED\u30DC\u30C3\u30C8\u306F\u611F\u60C5\u3092\u6301\u305F\u306A\u3044\u3093\u3067\u3057\u3087?"
-  - "\u50D5\u304C\u541B\u3060\u3063\u305F\u3089\u3001\u3053\u306E\u5BC2\u3057\u3055\u3092\u77E5\u3089\u305A\u306B\u3059\u3080\u306E\u306B\u306D\u3002"
-  - "\u8AB0\u3082\u50D5\u306E\u3053\u3068\u306A\u3093\u3066\u3001\u77E5\u308A\u3082\u3057\u306A\u3044\u3093\u3060\u308D\u3046\u306A\u3002"
 --- !u!135 &2133261784
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -20752,6 +20777,25 @@ Transform:
   m_PrefabParentObject: {fileID: 4000012535691032, guid: 9aad9de7cbca6d84b82891c3a1e63e34,
     type: 2}
   m_PrefabInternal: {fileID: 2133261781}
+--- !u!114 &2133261787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2133261782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09344ac6623ea4bb7888a653440eddfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scenarios:
+  - "\u306A\u3093\u3067\u3053\u3093\u306A\u6240\u306B\u3044\u308B\u306E\u304B\u3060\u3063\u3066?"
+  - "\u3060\u3063\u3066\u3001\u50D5\u306F\u307F\u3093\u306A\u3088\u308A\u5927\u304D\u3044\u304B\u3089\u306D\u3002\u90AA\u9B54\u306B\u306A\u3089\u306A\u3044\u3088\u3046\u306B\u3053\u3053\u306B\u3044\u308B\u3093\u3060\u3088\u3002"
+  - "\u50D5\u3082\u541B\u307F\u305F\u3044\u306B\u306A\u308A\u305F\u3044\u306A\u3002\u30ED\u30DC\u30C3\u30C8\u306F\u611F\u60C5\u3092\u6301\u305F\u306A\u3044\u3093\u3067\u3057\u3087?"
+  - "\u50D5\u304C\u541B\u3060\u3063\u305F\u3089\u3001\u3053\u306E\u5BC2\u3057\u3055\u3092\u77E5\u3089\u305A\u306B\u3059\u3080\u306E\u306B\u306D\u3002"
+  - "\u8AB0\u3082\u50D5\u306E\u3053\u3068\u306A\u3093\u3066\u3001\u77E5\u308A\u3082\u3057\u306A\u3044\u3093\u3060\u308D\u3046\u306A\u3002"
+  heart: {fileID: 773869902}
+  iventScript: {fileID: 968352713}
 --- !u!1001 &2134389646
 Prefab:
   m_ObjectHideFlags: 0
@@ -20820,22 +20864,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1000013849561652, guid: 5fd1210210040d34e8810388185a6063,
     type: 2}
   m_PrefabInternal: {fileID: 2134389646}
---- !u!114 &2134389648
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2134389647}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10f788f8b1e6445d5a3f3be9d2a388ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  is_pressing: 0
-  textcontroller: {fileID: 1649223233}
-  scenarios:
-  - "\u6751\u9577\u306F\u8D64\u3044\u98DF\u3079\u7269\u304C\u597D\u304D\u306A\u306E\u3088"
-  - "\u3044\u3064\u3082\u7121\u53E3\u3060\u3051\u3069\u3001\u3053\u306E\u524D\u305D\u306E\u30D5\u30EB\u30FC\u30C4\u3092\u304A\u3059\u305D\u5206\u3051\u3057\u305F\u3089\u3001\u51C4\u3044\u7B11\u9854\u3060\u3063\u305F\u306E!"
 --- !u!4 &2134389649 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4000011762660480, guid: 5fd1210210040d34e8810388185a6063,
@@ -20853,6 +20881,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.05, y: 0.025, z: 0.05}
   m_Center: {x: 0, y: 0.01, z: 0}
+--- !u!114 &2134389652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2134389647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09344ac6623ea4bb7888a653440eddfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scenarios:
+  - "\u6751\u9577\u306F\u8D64\u3044\u98DF\u3079\u7269\u304C\u597D\u304D\u306A\u306E\u3088"
+  - "\u3044\u3064\u3082\u7121\u53E3\u3060\u3051\u3069\u3001\u3053\u306E\u524D\u305D\u306E\u30D5\u30EB\u30FC\u30C4\u3092\u304A\u3059\u305D\u5206\u3051\u3057\u305F\u3089\u3001\u51C4\u3044\u7B11\u9854\u3060\u3063\u305F\u306E!"
+  heart: {fileID: 773869902}
+  iventScript: {fileID: 968352713}
 --- !u!1001 &2137014683
 Prefab:
   m_ObjectHideFlags: 0

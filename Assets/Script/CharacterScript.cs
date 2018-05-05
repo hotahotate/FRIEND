@@ -5,10 +5,12 @@ using UnityEngine.UI;
 
 public class CharacterScript : MonoBehaviour {
 
-	public TextController textcontroller;
+	//public TextController textcontroller;
 	public string[] scenarios;
 	public GameObject heart;
 	bool Aflagflag = false;
+
+	public IventScript iventScript;
 
 
 	// Use this for initialization
@@ -25,6 +27,8 @@ public class CharacterScript : MonoBehaviour {
 	void OnTriggerEnter(Collider other){
 		if (other.gameObject.tag == "player") {
 			Aflagflag = true;
+			iventScript.StartIvent (Aflagflag, scenarios);
+
 			heart.transform.position = gameObject.transform.position + new Vector3 (-0.5f, 1f, 0);
 			heart.SetActive (true);
 			Debug.Log ("OK");
@@ -38,11 +42,11 @@ public class CharacterScript : MonoBehaviour {
 			}
 	}
 
-	public void AButton(){
+	/*public void AButton(){
 		if (Aflagflag) {
 			textcontroller.StartText (scenarios);
 			Debug.Log("hogehoge");
 			Aflagflag = false;
 		}
-	}
+	}*/
 }

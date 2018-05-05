@@ -241,6 +241,53 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e3e8e33af43da834294d5f9a02da77e7, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &190787405
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4816950310595222, guid: e08d68a98d685415fa0d933d05d9151d, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1.8671683
+      objectReference: {fileID: 0}
+    - target: {fileID: 4816950310595222, guid: e08d68a98d685415fa0d933d05d9151d, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 2.5859475
+      objectReference: {fileID: 0}
+    - target: {fileID: 4816950310595222, guid: e08d68a98d685415fa0d933d05d9151d, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -9.79174
+      objectReference: {fileID: 0}
+    - target: {fileID: 4816950310595222, guid: e08d68a98d685415fa0d933d05d9151d, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4816950310595222, guid: e08d68a98d685415fa0d933d05d9151d, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4816950310595222, guid: e08d68a98d685415fa0d933d05d9151d, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4816950310595222, guid: e08d68a98d685415fa0d933d05d9151d, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4816950310595222, guid: e08d68a98d685415fa0d933d05d9151d, type: 2}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 114764390756925788, guid: e08d68a98d685415fa0d933d05d9151d,
+        type: 2}
+      propertyPath: textController
+      value: 
+      objectReference: {fileID: 852744237}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: e08d68a98d685415fa0d933d05d9151d, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &225361523
 Prefab:
   m_ObjectHideFlags: 0
@@ -580,6 +627,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1191510751 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114764390756925788, guid: e08d68a98d685415fa0d933d05d9151d,
+    type: 2}
+  m_PrefabInternal: {fileID: 190787405}
+  m_Script: {fileID: 11500000, guid: 528b4ded5dfa04b79bff4597de8bbb44, type: 3}
 --- !u!114 &1284988638 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114345436485135850, guid: e215afa54978344bfab892b1326efea4,
@@ -745,7 +798,7 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1484610513}
+      objectReference: {fileID: 1191510751}
     - target: {fileID: 114815494215996498, guid: e215afa54978344bfab892b1326efea4,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -781,6 +834,11 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1511840909}
+    - target: {fileID: 114853071415415552, guid: e215afa54978344bfab892b1326efea4,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: AButton
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e215afa54978344bfab892b1326efea4, type: 2}
   m_IsPrefabParent: 0
@@ -922,13 +980,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09344ac6623ea4bb7888a653440eddfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textcontroller: {fileID: 852744237}
   scenarios:
   - "\u3084\u3042"
   - "\u30CF\u30ED\u30FC"
   - "\u30A4\u30A8\u30B9"
   heart: {fileID: 877016576}
-  Aflagflag: 0
+  iventScript: {fileID: 1191510751}
 --- !u!135 &1484610515
 SphereCollider:
   m_ObjectHideFlags: 0
