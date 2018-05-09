@@ -22,7 +22,7 @@ public class EnemyHP : MonoBehaviour {
 	void Damage(){
 		enemyHP -= 0.3f;
 		if (enemyHP <= slider.minValue) {
-			Destroy (this.gameObject);
+			//Destroy (this.gameObject);
 		}
 	}
 
@@ -30,5 +30,9 @@ public class EnemyHP : MonoBehaviour {
 		if (enemyHP < slider.maxValue) {
 			enemyHP += 0.3f;		
 		}
+	}
+
+	void Damage2(){
+		enemyHP -= 0.1f;
 	}
 }

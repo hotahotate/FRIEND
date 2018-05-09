@@ -16,6 +16,7 @@ public class PlayerScript : MonoBehaviour {
 	bool ground;
 	//特定にキャラに遭遇したかどうか
 	public static bool charaFlag=false;
+	public static bool friendFlag=false;
 
 	void Start()
 	{
@@ -26,12 +27,6 @@ public class PlayerScript : MonoBehaviour {
 
 	void Update()
 	{
-
-
-
-
-
-
 		// Update is called once per frame
 		if (Input.GetAxis ("Vertical") == 0 && Input.GetAxis ("Horizontal") == 0) {
 			animator.SetBool ("Walk", false);
@@ -59,9 +54,16 @@ public class PlayerScript : MonoBehaviour {
 		if (other.gameObject.tag == "boss2") {
 			SceneManager.LoadScene ("Battle2");
 		}
+		/*if (other.gameObject.tag == "boss3") {
+			SceneManager.LoadScene ("Battle3");
+		}*/
 		//うさぎフラグ用
 		if(other.gameObject.name=="Rabbit_Red_Sun"){
 			charaFlag = true;
+		}
+		//Stage2のFriendフラグ用
+		if(other.gameObject.name=="Friend_Stage2"){
+			friendFlag = true;
 		}
 	}
 }

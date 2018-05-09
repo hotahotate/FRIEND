@@ -6,24 +6,24 @@ using UnityEngine.SceneManagement;
 public class PoseScript : MonoBehaviour {
 
 	GameObject posePanel;
-	GameObject returnButton;
-	GameObject goTitleButton;
-	GameObject itemButton;
+	//GameObject returnButton;
+	//GameObject goTitleButton;
+	//GameObject itemButton;
 	GameObject itemPanel;
 	GameObject item1;
 	GameObject item2;
 
-	public bool diary1=false;
-	public bool diary2=false;
+	public static bool diary1=false;
+	public static bool diary2=false;
 
 	//public int flag=0;
 
 	// Use this for initialization
 	void Start () {
 		posePanel = GameObject.Find ("PosePanel");
-		returnButton = GameObject.Find ("ReturnButton");
-		goTitleButton = GameObject.Find ("GoTitleButton");
-		itemButton = GameObject.Find ("ItemButton");
+		//returnButton = GameObject.Find ("ReturnButton");
+		//goTitleButton = GameObject.Find ("GoTitleButton");
+		//itemButton = GameObject.Find ("ItemButton");
 		itemPanel = GameObject.Find ("ItemPanel");
 		item1 = GameObject.Find ("diary1");
 		item2 = GameObject.Find ("diary2");

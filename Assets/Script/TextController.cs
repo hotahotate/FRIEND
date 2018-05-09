@@ -21,8 +21,7 @@ public class TextController : MonoBehaviour {
 
 	public GameObject panel;
 
-	//
-	//Button GoButton;
+	public static bool bossFlag = false;
 
 	// Use this for initialization
 	public void StartText (string[] scenarios/*Text message*/) {
@@ -55,6 +54,7 @@ public class TextController : MonoBehaviour {
 					flag = 0;
 				//GoButton.interactable = true;
 				MoveMobile.GoFlag=true;
+				bossFlag = true;
 			}
 		}
 

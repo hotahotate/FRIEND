@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class CharacterScript : MonoBehaviour {
+public class BossScript : MonoBehaviour {
 
-	//public TextController textcontroller;
+
 	public string[] scenarios;
 	public GameObject heart;
 	bool Aflagflag = false;
@@ -18,9 +19,13 @@ public class CharacterScript : MonoBehaviour {
 		//heart = GameObject.Find ("HeartIcon");
 		heart.SetActive (false);
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
+		if (TextController.bossFlag) {
+			Debug.Log("Hello");
+			SceneManager.LoadScene ("Battle3");
+		}
 	}
 
 	void OnTriggerEnter(Collider other){
@@ -38,14 +43,7 @@ public class CharacterScript : MonoBehaviour {
 		if(other.gameObject.tag=="player"){ 
 			Aflagflag = false;
 			heart.SetActive (false);
-			}
-	}
-
-	/*public void AButton(){
-		if (Aflagflag) {
-			textcontroller.StartText (scenarios);
-			Debug.Log("hogehoge");
-			Aflagflag = false;
 		}
-	}*/
+	}
+		
 }

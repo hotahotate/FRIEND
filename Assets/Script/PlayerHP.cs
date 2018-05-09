@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHP : MonoBehaviour {
 
@@ -24,6 +25,9 @@ public class PlayerHP : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		lifeText.text = "寿命: " + life.ToString ();
+		if (life == 0) {
+			//SceneManager.LoadScene("GameOver");
+		}
 	}
 
 	public void DamageFromEnemy(){
@@ -41,7 +45,7 @@ public class PlayerHP : MonoBehaviour {
 
 	public IEnumerator DamageFromTime(){
 		while (true) {
-			yield return new WaitForSeconds (3f);
+			yield return new WaitForSeconds (50f);
 			life--;
 			//Debug.Log (life);
 		}
