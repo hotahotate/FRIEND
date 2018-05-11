@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TextController : MonoBehaviour {
 
@@ -54,7 +55,9 @@ public class TextController : MonoBehaviour {
 					flag = 0;
 				//GoButton.interactable = true;
 				MoveMobile.GoFlag=true;
-				bossFlag = true;
+				if (SceneManager.GetActiveScene ().name == "Stage3") {
+					bossFlag = true;
+				}
 			}
 		}
 

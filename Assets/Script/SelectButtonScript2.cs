@@ -10,6 +10,8 @@ public class SelectButtonScript2 : MonoBehaviour {
 	public GameObject enemy;
 	public GameObject lifespan;
 	public Text bossText;
+	private Animator animator;
+	public GameObject robot;
 
 	private GameObject button1;
 	private GameObject button2;
@@ -21,6 +23,11 @@ public class SelectButtonScript2 : MonoBehaviour {
 	int missCount=0;
 	float timer=0f;
 
+	public GameObject canvas;
+	public GameObject subCnavas;
+	public GameObject camera;
+	public GameObject subCamera;
+
 
 	// Use this for initialization
 	void Start () {
@@ -29,6 +36,10 @@ public class SelectButtonScript2 : MonoBehaviour {
 		button3 = GameObject.Find ("Button3");
 		button4 = GameObject.Find ("Button4");
 		bossText.text="パーツが欲しければクイズに答えるのじゃ!わしの趣味は?";
+
+		subCnavas.SetActive (false);
+		subCamera.SetActive (false);
+		animator = robot.GetComponent<Animator>();
 	}
 
 	// Update is called once per frame
@@ -58,7 +69,15 @@ public class SelectButtonScript2 : MonoBehaviour {
 			}
 			if (timer > 18f) {
 				if (MoveMobile.EndFlag == 2) {
-					SceneManager.LoadScene ("Stage3");
+					canvas.SetActive (false);
+					camera.SetActive (false);
+					subCnavas.SetActive (true);
+					subCamera.SetActive (true);
+					animator.SetBool ("Walk", true);
+					animator.SetBool ("Idle", false);
+					if (timer > 22f) {
+						SceneManager.LoadScene ("Stage3");
+					}
 				} else {
 					SceneManager.LoadScene ("End1");
 				}

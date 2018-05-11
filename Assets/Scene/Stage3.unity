@@ -920,7 +920,7 @@ Prefab:
     - target: {fileID: 224527282633408684, guid: e215afa54978344bfab892b1326efea4,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -10.6
+      value: 0.000005722
       objectReference: {fileID: 0}
     - target: {fileID: 224527282633408684, guid: e215afa54978344bfab892b1326efea4,
         type: 2}
@@ -930,7 +930,7 @@ Prefab:
     - target: {fileID: 224527282633408684, guid: e215afa54978344bfab892b1326efea4,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -0.8
+      value: -0.00000077486
       objectReference: {fileID: 0}
     - target: {fileID: 224527282633408684, guid: e215afa54978344bfab892b1326efea4,
         type: 2}
@@ -1191,7 +1191,7 @@ MonoBehaviour:
   scenarios:
   - "\u3084\u3042\u3002\u3053\u3053\u306B\u6765\u305F\u3068\u3044\u3046\u3053\u3068\u306F\u3001\u65E5\u8A18\u3092\u8AAD\u3093\u3060\u3093\u3060\u306D"
   - "\u5B9F\u306F\u50D5\u306F\u541B\u306B\u305A\u3063\u3068\u5618\u3092\u3064\u3044\u3066\u3044\u305F\u3093\u3060"
-  - "\u541B\u306B\u8DB3\u308A\u306A\u3044\u30D1\u30FC\u30C4\u306F3\u3064\u3002\u6700\u5F8C\u306E\u30D1\u30FC\u30C4\u306F\u50D5\u304C\u6301\u3063\u3063\u3066\u308B\u3002"
+  - "\u541B\u306B\u8DB3\u308A\u306A\u3044\u30D1\u30FC\u30C4\u306F3\u3064\u3002\u6700\u5F8C\u306E\u30D1\u30FC\u30C4\u306F\u50D5\u304C\u6301\u3063\u3066\u308B\u3002"
   - "\u3067\u3082\u50D5\u306F\u3001\u3053\u308C\u3092\u541B\u306B\u6E21\u3059\u6C17\u306F\u306A\u3044\u3088"
   - "\u8FD4\u3057\u3066\u307B\u3057\u304B\u3063\u305F\u3089\u3001\u50D5\u3092\u8AAC\u5F97\u3057\u3066\u898B\u305B\u3066\u3002"
   heart: {fileID: 1119371447}

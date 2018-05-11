@@ -10,6 +10,8 @@ public class SelectButtonScript : MonoBehaviour {
 	public GameObject enemy;
 	public GameObject lifespan;
 	public Text enemyText;
+	private Animator animator;
+	public GameObject robot;
 
 	private GameObject button1;
 	private GameObject button2;
@@ -21,6 +23,11 @@ public class SelectButtonScript : MonoBehaviour {
 	int missCount=0;
 	float timer=0f;
 
+	public GameObject canvas;
+	public GameObject subCnavas;
+	public GameObject camera;
+	public GameObject subCamera;
+
 
 	// Use this for initialization
 	void Start () {
@@ -28,6 +35,12 @@ public class SelectButtonScript : MonoBehaviour {
 		button2 = GameObject.Find ("Button2");
 		button3 = GameObject.Find ("Button3");
 		button4 = GameObject.Find ("Button4");
+
+		subCnavas.SetActive (false);
+		subCamera.SetActive (false);
+
+		animator = robot.GetComponent<Animator>();
+
 	}
 	
 	// Update is called once per frame
@@ -44,10 +57,18 @@ public class SelectButtonScript : MonoBehaviour {
 			if (timer > 5f) {
 				enemyText.text="この部品を君に譲ろう";
 			}
-			if (timer > 10f) {
+			if (timer > 8f) {
 				enemyText.text="ネジを手に入れた!";
 			}
-			if (timer > 15f) {
+			if (timer > 11f) {
+				canvas.SetActive (false);
+				camera.SetActive (false);
+				subCnavas.SetActive (true);
+				subCamera.SetActive (true);
+				animator.SetBool ("Walk", true);
+				animator.SetBool ("Idle", false);
+			}
+			if (timer > 17f) {
 				SceneManager.LoadScene ("Stage2");
 			}
 		}

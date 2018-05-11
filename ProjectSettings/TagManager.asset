@@ -11,6 +11,7 @@ TagManager:
   - boss1
   - diary1
   - diary2
+  - boss3
   layers:
   - Default
   - TransparentFX
