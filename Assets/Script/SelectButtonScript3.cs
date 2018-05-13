@@ -17,8 +17,10 @@ public class SelectButtonScript3 : MonoBehaviour {
 
 	public Text friend;
 	public GameObject panel;
+	public GameObject panel2;
 
 	public GameObject camera;
+	//public GameObject camera2;
 	public GameObject canvas;
 	public GameObject subCanvas;
 	//public GameObject robot;
@@ -26,11 +28,14 @@ public class SelectButtonScript3 : MonoBehaviour {
 	public Text endrole;
 	bool movieFlag=false;
 	float timer=0f;
+	Transform panelPos;
 
 
 	// Use this for initialization
 	void Start () {
 		subCanvas.SetActive (false);
+		panel2.SetActive (false);
+		//camera2.SetActive (false);
 		//robot.SetActive (false);
 		//slime.SetActive (false);
 		//button1 = GameObject.Find ("BattleCanvas/Button1");
@@ -39,8 +44,14 @@ public class SelectButtonScript3 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (missCount > 5) {
-			SceneManager.LoadScene ("GameOver");
+		if (missCount > 3) {
+			timer += Time.deltaTime;
+			panel.SetActive (false);
+			panel2.SetActive (true);
+			friend.text="やっぱり君には渡せないよ。バイバイ。";
+			if (timer > 3f) {
+				SceneManager.LoadScene ("End1");
+			}
 		}
 		if (movieFlag) {
 			timer += Time.deltaTime;
@@ -52,17 +63,17 @@ public class SelectButtonScript3 : MonoBehaviour {
 			}
 			if (timer > 15f) {
 				subCanvas.SetActive (true);
-				endrole.text="FRIEND";
+				//endrole.text="FRIEND";
 			}
-			if (timer > 18f&&timer<29f) {
-				camera.transform.Rotate (new Vector3 (-10, 0, 0) * Time.deltaTime);
-			}
-			if (timer > 29f) {
-				/*robot.SetActive (true);
+			/*if (timer > 18f) {
+				subCanvas.SetActive (false);
+				camera2.SetActive (true);
+				robot.SetActive (true);
 				slime.SetActive (true);
-				robot.transform.position += new Vector3 ();
-				slime.transform.position += new Vector3 ();*/
-			}
+				robot.SendMessage("GoAnim");
+				camera2.transform.potision += new Vector3 (0, 0, -10);
+
+			}*/
 		}
 	}
 
@@ -80,7 +91,7 @@ public class SelectButtonScript3 : MonoBehaviour {
 			ChangeWord3 ();
 			flag = 3;
 			hitCount--;
-			friend.text = "...そうだよ。これを付ければ、君は全てを思い出してしまう。";
+			friend.text = "...そうだよ。この部品には君の過去の記憶が記されてる。";
 		} else if (flag == 3) {
 			enemy.SendMessage ("Damage2");
 			ChangeWord4 ();
@@ -93,7 +104,7 @@ public class SelectButtonScript3 : MonoBehaviour {
 			flag = 7;
 			hitCount--;
 			panel.transform.Rotate (new Vector3 (0, 180, 0));
-			friend.text = "メモリをつけると、僕が感情を取り戻してしまうと思ったんだね。君が嘘をつき続けたのは...";
+			friend.text = "過去を思い出すと、僕が感情を取り戻してしまうと思ったんだね。君が嘘をつき続けたのは...";
 		} else if (flag == 7) {
 			enemy.SendMessage ("Damage2");
 			ChangeWord8 ();
@@ -133,15 +144,15 @@ public class SelectButtonScript3 : MonoBehaviour {
 			friend.text = "何故だと思う?";
 		} else if (flag == 5) {
 			enemy.SendMessage ("Damage2");
-			friend.text = "そうだよ。君は倒れてる機械を助けるために、自ら部品をその子に譲ったんだ。";
-			Invoke ("FriendWord", 5.0f);
+			friend.text = "そうだよ。君は倒れてるロボットを助けるために、自ら部品をその子に譲ったんだ。";
+			Invoke ("FriendWord", 2.0f);
 		} else if (flag == 8) {
 			enemy.SendMessage ("Damage2");
 			flag = 9;
 			hitCount--;
 			panel.transform.Rotate (new Vector3 (0, 180, 0));
 			friend.text = "もしかして君は最初から";
-			Invoke ("YouWord", 5.0f);
+			Invoke ("YouWord", 2.0f);
 		} 
 		else {
 			missCount++;
@@ -184,8 +195,8 @@ public class SelectButtonScript3 : MonoBehaviour {
 	}
 
 	public void ChangeWord2(){
-		button1.GetComponentInChildren<Text>().text="君が持ってる部品はメモリ?";
-		button2.GetComponentInChildren<Text>().text="君が持ってる部品は何?";
+		button1.GetComponentInChildren<Text>().text="君が持ってるパーツは部品99?";
+		button2.GetComponentInChildren<Text>().text="君が持ってるパーツは部品67?";
 		/*button3.GetComponentInChildren<Text>().text="7";
 		button4.GetComponentInChildren<Text>().text="8";*/
 	}
@@ -196,7 +207,7 @@ public class SelectButtonScript3 : MonoBehaviour {
 	}
 
 	public void ChangeWord4(){
-		button1.GetComponentInChildren<Text>().text="どういう意味?";
+		button1.GetComponentInChildren<Text>().text="意味が分からないよ";
 		button2.GetComponentInChildren<Text>().text="僕は何故部品を無くしたの?";
 	}
 
@@ -206,15 +217,15 @@ public class SelectButtonScript3 : MonoBehaviour {
 	}
 
 	public void FriendWord(){
-		friend.text = "ネジと言語処理機能、そしてメモリ。出会った頃は感情なんてなかった君が、そんな行動をとった。";
+		friend.text = "部品1と42、そして99。出会った頃は感情なんてなかった君が、そんな行動をとった。";
 		ChangeWord6 ();
 		flag = 6;
 		hitCount--;
 	}
 
 	public void ChangeWord6(){
-		button1.GetComponentInChildren<Text>().text="可哀想だと思ったんだと思う。";
-		button2.GetComponentInChildren<Text>().text="哀れだと思ったんだと思う。";
+		button1.GetComponentInChildren<Text>().text="可哀想だったから。";
+		button2.GetComponentInChildren<Text>().text="いらなかったから。";
 	}
 
 	public void ChangeWord7(){

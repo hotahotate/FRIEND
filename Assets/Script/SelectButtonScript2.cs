@@ -45,14 +45,18 @@ public class SelectButtonScript2 : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (missCount == 3) {
-			SceneManager.LoadScene ("Stage2");
+			timer += Time.deltaTime;
+			bossText.text="残念!また出直しておいで。";
+			if (timer > 3f) {
+				SceneManager.LoadScene ("Stage2");
+			}
 		} else if (hitCount == 0) {
 			button1.SetActive (false);
 			button2.SetActive (false);
 			button3.SetActive (false);
 			button4.SetActive (false);
 			timer += Time.deltaTime;
-			bossText.text = "コスモ...私が作ったこ。";
+			bossText.text = "コスモ...私が作ったロボットの名だ。";
 			if (timer > 2f) {
 				bossText.text="私と暮らすうちに、感情を持つようになってな";
 			}
@@ -63,7 +67,7 @@ public class SelectButtonScript2 : MonoBehaviour {
 				bossText.text = "出て行ってしまったよ。";
 			}
 			if (timer > 10f) {
-				bossText.text = "君が欲しかったパーツだ。これで、文字が読めるようになるぞ";		
+				bossText.text = "君が欲しかった部品だ。これで文字が読めるようになるよ";		
 			}
 			if (timer > 13f) {
 				bossText.text="もしあの子が困っていたら、どうか助けてやってくれ。";
@@ -72,7 +76,7 @@ public class SelectButtonScript2 : MonoBehaviour {
 				bossText.text="頼んだよ。";
 			}
 			if (timer > 18f) {
-				if (MoveMobile.EndFlag == 2) {
+				if (SubMoveMobile.EndFlag == 2) {
 					canvas.SetActive (false);
 					camera.SetActive (false);
 					subCnavas.SetActive (true);

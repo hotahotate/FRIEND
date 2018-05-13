@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MovieController : MonoBehaviour {
 	
@@ -11,7 +12,9 @@ public class MovieController : MonoBehaviour {
 	public GameObject friend2;
 	public GameObject robot;
 	public GameObject robot2;
+	//public GameObject robot3;
 	public GameObject camera2set;
+	public GameObject Text2;
 	public Text title;
 	private Animator animator;
 	AudioSource audioSource;
@@ -20,9 +23,10 @@ public class MovieController : MonoBehaviour {
 	public GameObject camera2;
 	public GameObject camera3;
 	public GameObject camera4;
+	public GameObject camera5;
 
 
-	bool flag=false;
+	//bool flag=false;
 	//float angle=0;
 	public float minAngle=0.0f;
 	public float maxAngle=90.0f;
@@ -33,10 +37,13 @@ public class MovieController : MonoBehaviour {
 		audioSource = camera4.AddComponent<AudioSource> ();
 		audioSource.clip = blackSound;
 		robot2.SetActive (false);
+		//robot3.SetActive (false);
 		camera2.SetActive (false);
 		camera3.SetActive (false);
 		camera4.SetActive (false);
+		camera5.SetActive (false);
 		friend2.SetActive (false);
+		Text2.SetActive (false);
 	}
 	
 	// Update is called once per frame
@@ -83,6 +90,17 @@ public class MovieController : MonoBehaviour {
 		}
 		if (timer > 19f) {
 			title.text="FRIEND";
+		}
+		if (timer > 25f) {
+			camera3.SetActive (false);
+			camera5.SetActive (true);
+
+			title.text=" ";
+			Text2.SetActive (true);
+			//robot3.SetActive (true);
+		}
+		if (timer > 30f) {
+			SceneManager.LoadScene ("Stage1");
 		}
 	}
 }

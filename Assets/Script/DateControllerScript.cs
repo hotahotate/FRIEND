@@ -25,7 +25,7 @@ public class DateControllerScript : MonoBehaviour {
 
 	public void StartButton(){
 		PlayerHP.life = 10;
-		SceneManager.LoadScene ("Stage1");
+		SceneManager.LoadScene ("Movie1");
 		PoseScript.diary1 = 0;
 	}
 

@@ -2118,6 +2118,7 @@ MonoBehaviour:
   textcontroller: {fileID: 852744237}
   scenarios:
   - "\u3084\u3042\u3001\u307E\u305F\u4F1A\u3063\u305F\u306D\u3002"
+  - "\u899A\u3048\u3066\u308B?\u3055\u3063\u304D\u306E\u6751\u3067\u4F1A\u3063\u305F\u30B0\u30EA\u30FC\u30F3\u30B9\u30E9\u30A4\u30E0\u3060\u3088\u3002"
   - "\u3042\u3068\u4E00\u3064\u30D1\u30FC\u30C4\u3092\u624B\u306B\u3044\u308C\u308C\u3070\u3044\u3044\u3093\u3060\u3088"
   scenarios2:
   - "\u3042\u308C\u308C...\u65E5\u8A18\u304C\u3069\u3053\u304B\u306B\u884C\u3063\u3061\u3083\u3063\u305F\u3002"
@@ -8385,15 +8386,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1354714882}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 468.4, y: 6.06, z: 264.86}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 377.2, y: 6.06, z: 268.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2024714640}
   - {fileID: 1634836392}
   m_Father: {fileID: 0}
   m_RootOrder: 30
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &1354714885
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8810,6 +8811,10 @@ Prefab:
         type: 2}
       propertyPath: m_Text
       value: "\n\u8AB0\u304B\u306E\u65E5\u8A18\u5E33\u3002\n\u8AAD\u3081\u306A\u3044\u3002"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1195513020772754, guid: e215afa54978344bfab892b1326efea4, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e215afa54978344bfab892b1326efea4, type: 2}
@@ -12620,7 +12625,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0

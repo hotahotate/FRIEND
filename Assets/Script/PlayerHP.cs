@@ -45,7 +45,7 @@ public class PlayerHP : MonoBehaviour {
 
 	public IEnumerator DamageFromTime(){
 		while (true) {
-			yield return new WaitForSeconds (50f);
+			yield return new WaitForSeconds (80f);
 			life--;
 			//Debug.Log (life);
 		}
