@@ -47,6 +47,10 @@ public class SelectButtonScript2 : MonoBehaviour {
 		if (missCount == 3) {
 			SceneManager.LoadScene ("Stage2");
 		} else if (hitCount == 0) {
+			button1.SetActive (false);
+			button2.SetActive (false);
+			button3.SetActive (false);
+			button4.SetActive (false);
 			timer += Time.deltaTime;
 			bossText.text = "コスモ...私が作ったこ。";
 			if (timer > 2f) {

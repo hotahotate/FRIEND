@@ -2,29 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
-using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
-public class MoveMobile : MonoBehaviour {
+public class SubMoveMobile : MonoBehaviour {
 
-	//NavMeshAgent agent = null;
-	//public GameObject player;
+	public GameObject player;
 	//float timer=0;
 	float speed=5.0f;
 	bool push=false;
 	bool pushRight=false;
 	bool pushLeft=false;
 	private Animator animator;
-	//int itemFlag=0;
 
 	GameObject poseController;
 
 	public static bool GoFlag=true;
-
+	public static bool friendFlag=false;
 	public static int EndFlag=0;
 
+
 	void Start () {
-		//agent = GetComponent<NavMeshAgent> ();
-		animator = GetComponent<Animator>();
 
 		poseController=GameObject.Find("PoseController");
 	}
@@ -61,8 +58,9 @@ public class MoveMobile : MonoBehaviour {
 			GoButton ();
 		}
 		else {
-			animator.SetBool ("Walk", false);
-			animator.SetBool ("Idle", true);
+			//animator.SetBool ("Walk", false);
+			//animator.SetBool ("Idle", true);
+			player.SendMessage("IdleAnim");
 		}
 		if (pushRight) {
 			Right ();
@@ -95,8 +93,9 @@ public class MoveMobile : MonoBehaviour {
 	public void GoButton(){
 		if (GoFlag) {
 			Debug.Log ("aruitta");
-			animator.SetBool ("Idle", false);
-			animator.SetBool ("Walk", true);
+			//animator.SetBool ("Idle", false);
+			//animator.SetBool ("Walk", true);
+			player.SendMessage("GoAnim");
 			transform.position += transform.forward * speed * Time.deltaTime;
 		}
 	}
@@ -113,6 +112,13 @@ public class MoveMobile : MonoBehaviour {
 			Destroy (other.gameObject);
 			poseController.SendMessage ("Flag", 2);
 		}
+		if (other.gameObject.tag == "boss2") {
+			SceneManager.LoadScene ("Battle2");
+		}
+		if(other.gameObject.name=="Friend_Stage2"){
+			Debug.Log ("friend");
+			friendFlag = true;
+		}
 	}
 
 
@@ -124,4 +130,5 @@ public class MoveMobile : MonoBehaviour {
 	public void Left(){
 		transform.Rotate (0, -5, 0);
 	}
+		
 }

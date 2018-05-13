@@ -18,8 +18,21 @@ public class SelectButtonScript3 : MonoBehaviour {
 	public Text friend;
 	public GameObject panel;
 
+	public GameObject camera;
+	public GameObject canvas;
+	public GameObject subCanvas;
+	//public GameObject robot;
+	//public GameObject slime;
+	public Text endrole;
+	bool movieFlag=false;
+	float timer=0f;
+
+
 	// Use this for initialization
 	void Start () {
+		subCanvas.SetActive (false);
+		//robot.SetActive (false);
+		//slime.SetActive (false);
 		//button1 = GameObject.Find ("BattleCanvas/Button1");
 		//button2 = GameObject.Find ("BattleCanvas/Button2");
 	}
@@ -28,6 +41,28 @@ public class SelectButtonScript3 : MonoBehaviour {
 	void Update () {
 		if (missCount > 5) {
 			SceneManager.LoadScene ("GameOver");
+		}
+		if (movieFlag) {
+			timer += Time.deltaTime;
+			if (timer > 0f && timer < 9f) {
+				camera.transform.position += new Vector3 (0, 0, -0.1f);
+			}
+			if (timer > 3f&&timer<14f) {
+				camera.transform.Rotate (new Vector3 (-10, 0, 0) * Time.deltaTime);
+			}
+			if (timer > 15f) {
+				subCanvas.SetActive (true);
+				endrole.text="FRIEND";
+			}
+			if (timer > 18f&&timer<29f) {
+				camera.transform.Rotate (new Vector3 (-10, 0, 0) * Time.deltaTime);
+			}
+			if (timer > 29f) {
+				/*robot.SetActive (true);
+				slime.SetActive (true);
+				robot.transform.position += new Vector3 ();
+				slime.transform.position += new Vector3 ();*/
+			}
 		}
 	}
 
@@ -65,7 +100,13 @@ public class SelectButtonScript3 : MonoBehaviour {
 			flag = 8;
 			hitCount--;
 			friend.text = "僕はきっと君と出会って、感情を知ったんだね。";
-		} else {
+		}else if (flag == 9) {
+			/*button1.SetActive (false);
+			button2.SetActive (false);*/
+			canvas.SetActive (false);
+			movieFlag = true;
+		}  
+		else {
 			missCount++;
 		}
 
@@ -99,9 +140,10 @@ public class SelectButtonScript3 : MonoBehaviour {
 			flag = 9;
 			hitCount--;
 			panel.transform.Rotate (new Vector3 (0, 180, 0));
-			friend.text = "もしかして君は最初から...";
+			friend.text = "もしかして君は最初から";
 			Invoke ("YouWord", 5.0f);
-		} else {
+		} 
+		else {
 			missCount++;
 		}
 		//enemy.SendMessage ("Recover");
@@ -195,6 +237,11 @@ public class SelectButtonScript3 : MonoBehaviour {
 		friend.text = "うん。記憶は無くしても、感情は忘れなかったみたい。だから僕は思い出したいんだ。";
 		ChangeWord9 ();
 
+	}
+
+
+	public void ReStartButton(){
+		SceneManager.LoadScene ("Title");
 	}
 
 }

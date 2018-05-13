@@ -13,7 +13,7 @@ public class PoseScript : MonoBehaviour {
 	GameObject item1;
 	GameObject item2;
 
-	public static bool diary1=false;
+	public static int diary1;
 	public static bool diary2=false;
 
 	//public int flag=0;
@@ -51,7 +51,7 @@ public class PoseScript : MonoBehaviour {
 
 	public void ItemButton(){
 		itemPanel.SetActive (true);
-		if (diary1) {
+		if (diary1==1) {
 			item1.SetActive (true);
 		} else {
 			item1.SetActive (false);
@@ -71,7 +71,7 @@ public class PoseScript : MonoBehaviour {
 	public void Flag(int flag){
 		if (flag == 1) {
 			Debug.Log ("diary1");
-			diary1 = true;
+			diary1 = 1;
 		}
 		else if(flag==2){
 			diary2=true;

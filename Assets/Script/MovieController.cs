@@ -64,6 +64,7 @@ public class MovieController : MonoBehaviour {
 			camera4.SetActive (true);
 		}
 		if (timer > 10f) {
+			audioSource.Stop ();
 			/*robot.SetActive (false);
 			robot2.SetActive (true);
 			friend.SetActive (false);
