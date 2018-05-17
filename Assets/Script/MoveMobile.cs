@@ -75,8 +75,8 @@ public class MoveMobile : MonoBehaviour {
 		/*var v1 = CrossPlatformInputManager.GetAxis ("Vertical");
 		var h1 = CrossPlatformInputManager.GetAxis ("Horizontal");*/
 
-		var v2 = CrossPlatformInputManager.GetAxis ("Vertical2");
-		var h2 = CrossPlatformInputManager.GetAxis ("Horizontal2");
+		//var v2 = CrossPlatformInputManager.GetAxis ("Vertical2");
+		//var h2 = CrossPlatformInputManager.GetAxis ("Horizontal2");
 
 		// スティックが倒れていれば、移動
 		/*if (h1 != 0 || v1 != 0) {
@@ -84,12 +84,12 @@ public class MoveMobile : MonoBehaviour {
 			agent.Move (direction * Time.deltaTime);
 		}*/
 		// スティックが倒れていれば、倒れている方向を向く
-		if( h2 != 0 || v2 != 0){
+		/*if( h2 != 0 || v2 != 0){
 			var direction = new Vector3 (h2, 0, v2);
 			//transform.localRotation = Quaternion.LookRotation (direction);
 			Quaternion targetRotation=Quaternion.LookRotation (direction);
 			transform.rotation=Quaternion.Slerp(transform.rotation,targetRotation,Time.deltaTime);
-		}
+		}*/
 	}
 
 	public void GoButton(){

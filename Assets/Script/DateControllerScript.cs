@@ -7,7 +7,7 @@ public class DateControllerScript : MonoBehaviour {
 
 	public string key="SaveLife";
 	public string key2="SaveScene";
-	public string key3="SaveDiary";
+	//public string key3="SaveDiary";
 
 	public string sceneNo;
 
@@ -26,20 +26,20 @@ public class DateControllerScript : MonoBehaviour {
 	public void StartButton(){
 		PlayerHP.life = 10;
 		SceneManager.LoadScene ("Movie1");
-		PoseScript.diary1 = 0;
+		//PoseScript.diary1 = 0;
 	}
 
 	public void SaveButton(){
 		PlayerPrefs.SetInt(key,PlayerHP.life);
 		PlayerPrefs.SetString(sceneNo,SceneManager.GetActiveScene().name);
-		PlayerPrefs.SetInt (key3, PoseScript.diary1);
+		//PlayerPrefs.SetInt (key3, PoseScript.diary1);
 
 		Debug.Log (SceneManager.GetActiveScene ().name);
 	}
 
 	public void LoadButton(){
 		PlayerHP.life = PlayerPrefs.GetInt (key, 10);
-		PoseScript.diary1 = PlayerPrefs.GetInt (key3, 0);
+		//PoseScript.diary1 = PlayerPrefs.GetInt (key3, 0);
 		sceneNo = PlayerPrefs.GetString (sceneNo,"Stage1");
 		SceneManager.LoadScene (sceneNo);
 	}

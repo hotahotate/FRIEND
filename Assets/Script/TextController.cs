@@ -36,7 +36,7 @@ public class TextController : MonoBehaviour {
 		uiText.gameObject.SetActive (true);
 		//GoButton=GameObject.Find ("Canvas/LeftButton/Go").GetComponent<Button> ();
 		//GoButton.interactable = false;
-		MoveMobile.GoFlag=false;
+		SubMoveMobile.GoFlag=false;
 		TextUpdate ();
 
 	}
@@ -54,7 +54,7 @@ public class TextController : MonoBehaviour {
 					panel.SetActive (false);
 					flag = 0;
 				//GoButton.interactable = true;
-				MoveMobile.GoFlag=true;
+				SubMoveMobile.GoFlag=true;
 				if (SceneManager.GetActiveScene ().name == "Stage3") {
 					bossFlag = true;
 				}

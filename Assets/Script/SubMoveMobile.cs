@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityStandardAssets.CrossPlatformInput;
+//using UnityStandardAssets.CrossPlatformInput;
 using UnityEngine.SceneManagement;
 
 public class SubMoveMobile : MonoBehaviour {
@@ -18,12 +18,16 @@ public class SubMoveMobile : MonoBehaviour {
 
 	public static bool GoFlag=true;
 	public static bool friendFlag=false;
+	public static bool charaFlag=false;
 	public static int EndFlag=0;
+
+	AudioSource getdiary;
 
 
 	void Start () {
-
+		
 		poseController=GameObject.Find("PoseController");
+		getdiary = GetComponent<AudioSource> ();
 	}
 
 	public void PushDown(){
@@ -54,6 +58,7 @@ public class SubMoveMobile : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		Debug.Log (EndFlag);
 		if (push) {
 			GoButton ();
 		}
@@ -73,8 +78,8 @@ public class SubMoveMobile : MonoBehaviour {
 		/*var v1 = CrossPlatformInputManager.GetAxis ("Vertical");
 		var h1 = CrossPlatformInputManager.GetAxis ("Horizontal");*/
 
-		var v2 = CrossPlatformInputManager.GetAxis ("Vertical2");
-		var h2 = CrossPlatformInputManager.GetAxis ("Horizontal2");
+		/*var v2 = CrossPlatformInputManager.GetAxis ("Vertical2");
+		var h2 = CrossPlatformInputManager.GetAxis ("Horizontal2");*/
 
 		// スティックが倒れていれば、移動
 		/*if (h1 != 0 || v1 != 0) {
@@ -82,12 +87,12 @@ public class SubMoveMobile : MonoBehaviour {
 			agent.Move (direction * Time.deltaTime);
 		}*/
 		// スティックが倒れていれば、倒れている方向を向く
-		if( h2 != 0 || v2 != 0){
+		/*if( h2 != 0 || v2 != 0){
 			var direction = new Vector3 (h2, 0, v2);
 			//transform.localRotation = Quaternion.LookRotation (direction);
 			Quaternion targetRotation=Quaternion.LookRotation (direction);
 			transform.rotation=Quaternion.Slerp(transform.rotation,targetRotation,Time.deltaTime);
-		}
+		}*/
 	}
 
 	public void GoButton(){
@@ -102,22 +107,30 @@ public class SubMoveMobile : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other){
 		if (other.gameObject.name == "Diary1") {
+			getdiary.Play ();
 			EndFlag++;
 			Destroy (other.gameObject);
 			poseController.SendMessage ("Flag", 1);
 		}
 
 		if (other.gameObject.name == "Diary2") {
+			getdiary.Play ();
 			EndFlag++;
 			Destroy (other.gameObject);
 			poseController.SendMessage ("Flag", 2);
 		}
+		if (other.gameObject.tag == "boss1") {
+			SceneManager.LoadScene ("Battle");
+		}
 		if (other.gameObject.tag == "boss2") {
 			SceneManager.LoadScene ("Battle2");
 		}
-		if(other.gameObject.name=="Friend_Stage2"){
+		/*if(other.gameObject.name=="Friend_Stage2"){
 			Debug.Log ("friend");
 			friendFlag = true;
+		}*/
+		if(other.gameObject.name=="Rabbit_Red_Sun"){
+			charaFlag = true;
 		}
 	}
 

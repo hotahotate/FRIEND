@@ -15,6 +15,7 @@ public class MovieController : MonoBehaviour {
 	//public GameObject robot3;
 	public GameObject camera2set;
 	public GameObject Text2;
+	public GameObject Text3;
 	public Text title;
 	private Animator animator;
 	AudioSource audioSource;
@@ -44,6 +45,7 @@ public class MovieController : MonoBehaviour {
 		camera5.SetActive (false);
 		friend2.SetActive (false);
 		Text2.SetActive (false);
+		Text3.SetActive (false);
 	}
 	
 	// Update is called once per frame
@@ -97,9 +99,10 @@ public class MovieController : MonoBehaviour {
 
 			title.text=" ";
 			Text2.SetActive (true);
+			Text3.SetActive (true);
 			//robot3.SetActive (true);
 		}
-		if (timer > 30f) {
+		if (timer > 38f) {
 			SceneManager.LoadScene ("Stage1");
 		}
 	}

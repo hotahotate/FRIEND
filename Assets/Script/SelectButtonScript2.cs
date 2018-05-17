@@ -28,6 +28,11 @@ public class SelectButtonScript2 : MonoBehaviour {
 	public GameObject camera;
 	public GameObject subCamera;
 
+	public GameObject yes;
+	public GameObject no;
+
+	AudioSource audioYes,audioNo;
+
 
 	// Use this for initialization
 	void Start () {
@@ -35,16 +40,24 @@ public class SelectButtonScript2 : MonoBehaviour {
 		button2 = GameObject.Find ("Button2");
 		button3 = GameObject.Find ("Button3");
 		button4 = GameObject.Find ("Button4");
-		bossText.text="パーツが欲しければクイズに答えるのじゃ!わしの趣味は?";
+		bossText.text="部品が欲しければクイズに答えるのじゃ!わしの趣味は?";
 
 		subCnavas.SetActive (false);
 		subCamera.SetActive (false);
 		animator = robot.GetComponent<Animator>();
+
+		audioYes = yes.gameObject.GetComponent<AudioSource>();
+		audioNo = no.gameObject.GetComponent<AudioSource> ();
+
 	}
 
 	// Update is called once per frame
 	void Update () {
 		if (missCount == 3) {
+			button1.SetActive (false);
+			button2.SetActive (false);
+			button3.SetActive (false);
+			button4.SetActive (false);
 			timer += Time.deltaTime;
 			bossText.text="残念!また出直しておいで。";
 			if (timer > 3f) {
@@ -67,7 +80,7 @@ public class SelectButtonScript2 : MonoBehaviour {
 				bossText.text = "出て行ってしまったよ。";
 			}
 			if (timer > 10f) {
-				bossText.text = "君が欲しかった部品だ。これで文字が読めるようになるよ";		
+				bossText.text = "君が欲しかった部品だ。これで文字が読めるよ。";		
 			}
 			if (timer > 13f) {
 				bossText.text="もしあの子が困っていたら、どうか助けてやってくれ。";
@@ -76,7 +89,7 @@ public class SelectButtonScript2 : MonoBehaviour {
 				bossText.text="頼んだよ。";
 			}
 			if (timer > 18f) {
-				if (SubMoveMobile.EndFlag == 2) {
+				if (SubMoveMobile.EndFlag >= 2) {
 					canvas.SetActive (false);
 					camera.SetActive (false);
 					subCnavas.SetActive (true);
@@ -96,12 +109,14 @@ public class SelectButtonScript2 : MonoBehaviour {
 	public void Button1(){
 		//enemy.SendMessage("Recover");
 		if (flag == 0) {
+			audioYes.Play();
 			enemy.SendMessage ("Damage");
 			hitCount--;
 			ChangeWord ();
 			flag = 1;
 			bossText.text = "わしの昔の仕事は?";
 		} else {
+			audioNo.Play ();
 			missCount++;
 			lifespan.SendMessage ("DamageFromEnemy");
 		}
@@ -109,21 +124,25 @@ public class SelectButtonScript2 : MonoBehaviour {
 
 	public void Button2(){
 		//enemy.SendMessage ("Recover");
+		audioNo.Play ();
 		missCount++;
 		lifespan.SendMessage ("DamageFromEnemy");
 	}
 
 	public void Button3(){
 		if (flag == 2) {
+			audioYes.Play();
 			enemy.SendMessage ("Damage");
 			ChangeWord3 ();
 			flag = 3;
 			hitCount--;
 			bossText.text = "わしが探しているのは?";
 		} else if (flag == 3) {
+			audioYes.Play();
 			enemy.SendMessage ("Damage");
 			hitCount--;
 		}else {
+			audioNo.Play ();
 			//enemy.SendMessage("Recover");
 			lifespan.SendMessage ("DamageFromEnemy");
 		}
@@ -131,6 +150,7 @@ public class SelectButtonScript2 : MonoBehaviour {
 
 	public void Button4(){
 		if (flag == 1) {
+			audioYes.Play();
 			enemy.SendMessage ("Damage");
 			ChangeWord2 ();
 			flag = 2;
@@ -138,6 +158,7 @@ public class SelectButtonScript2 : MonoBehaviour {
 			bossText.text = "この村には何人嘘つきがいる?";
 		} else {
 			//enemy.SendMessage("Recover");
+			audioNo.Play ();
 			missCount++;
 			lifespan.SendMessage ("DamageFromEnemy");
 		}

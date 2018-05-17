@@ -23,7 +23,7 @@ public class CharacterScript2 : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other){
-		if (PlayerScript.charaFlag||SubMoveMobile.friendFlag) {
+		if (SubMoveMobile.charaFlag||SubMoveMobile.friendFlag) {
 			Bflagflag = true;
 			iventScript.StartIvent (Bflagflag, scenarios2);
 

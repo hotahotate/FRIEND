@@ -28,6 +28,12 @@ public class SelectButtonScript : MonoBehaviour {
 	public GameObject camera;
 	public GameObject subCamera;
 
+	//効果音
+	//AudioSource audioSource;
+	public GameObject yes;
+	public GameObject no;
+
+	AudioSource audioYes,audioNo;
 
 	// Use this for initialization
 	void Start () {
@@ -40,12 +46,20 @@ public class SelectButtonScript : MonoBehaviour {
 		subCamera.SetActive (false);
 
 		animator = robot.GetComponent<Animator>();
+		//audioSource = GetComponent<AudioSource> ();
+		audioYes = yes.gameObject.GetComponent<AudioSource>();
+		audioNo = no.gameObject.GetComponent<AudioSource> ();
+
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (missCount == 3) {
+			button1.SetActive (false);
+			button2.SetActive (false);
+			button3.SetActive (false);
+			button4.SetActive (false);
 			timer += Time.deltaTime;
 			enemyText.text = "他所者に譲る物などないよ。";
 			if (timer > 3f) {
@@ -81,9 +95,14 @@ public class SelectButtonScript : MonoBehaviour {
 	public void Button1(){
 		//enemy.SendMessage("Recover");
 		if (flag == 2) {
+			//atari.PlayOneShot (atari.clip);
+			audioYes.Play();
 			enemy.SendMessage ("Damage");
 			hitCount--;
 		} else {
+			//audioSource.Play ();
+			//hazure.PlayOneShot(hazure.clip);
+			audioNo.Play ();
 			missCount++;
 			lifespan.SendMessage ("DamageFromEnemy");
 		}
@@ -91,12 +110,16 @@ public class SelectButtonScript : MonoBehaviour {
 
 	public void Button2(){
 		//enemy.SendMessage ("Recover");
+		audioNo.Play ();
+		//hazure.PlayOneShot(hazure.clip);
 		missCount++;
 		lifespan.SendMessage ("DamageFromEnemy");
 	}
 
 	public void Button3(){
 		if (flag == 0) {
+			//atari.PlayOneShot (atari.clip);
+			audioYes.Play();
 			enemy.SendMessage ("Damage");
 			ChangeWord ();
 			flag = 1;
@@ -104,12 +127,18 @@ public class SelectButtonScript : MonoBehaviour {
 			enemyText.text="私の昔のあだ名は?";
 		} else {
 			//enemy.SendMessage("Recover");
+			//audioSource.Play ();
+			//hazure.PlayOneShot(hazure.clip);
+			audioNo.Play ();
+			missCount++;
 			lifespan.SendMessage ("DamageFromEnemy");
 		}
 	}
 
 	public void Button4(){
 		if (flag == 1) {
+			//atari.PlayOneShot (atari.clip);
+			audioYes.Play();
 			enemy.SendMessage ("Damage");
 			ChangeWord2 ();
 			flag = 2;
@@ -117,6 +146,9 @@ public class SelectButtonScript : MonoBehaviour {
 			enemyText.text=" 私の最近の悩みは?";
 		} else {
 			//enemy.SendMessage("Recover");
+			//audioSource.Play ();
+			//hazure.PlayOneShot(hazure.clip);
+			audioNo.Play ();
 			missCount++;
 			lifespan.SendMessage ("DamageFromEnemy");
 		}
