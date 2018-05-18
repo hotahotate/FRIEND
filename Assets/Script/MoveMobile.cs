@@ -94,7 +94,7 @@ public class MoveMobile : MonoBehaviour {
 
 	public void GoButton(){
 		if (GoFlag) {
-			Debug.Log ("aruitta");
+			//Debug.Log ("aruitta");
 			animator.SetBool ("Idle", false);
 			animator.SetBool ("Walk", true);
 			transform.position += transform.forward * speed * Time.deltaTime;

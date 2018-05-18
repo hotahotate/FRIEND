@@ -30,7 +30,7 @@ public class CharacterScript : MonoBehaviour {
 
 			heart.transform.position = gameObject.transform.position + new Vector3 (-0.5f, 1f, 0);
 			heart.SetActive (true);
-			Debug.Log ("OK");
+			//Debug.Log ("OK");
 		}
 	}
 

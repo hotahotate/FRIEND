@@ -37,14 +37,14 @@ public class Patrol : MonoBehaviour {
 	void OnTriggerEnter(Collider other){
 		if (other.gameObject.tag == "player") {
 			agent.Stop();
-			Debug.Log ("Robot");
+			//Debug.Log ("Robot");
 			transform.root.LookAt (target);
 		}
 	}
 
 	void OnTriggerExit(Collider other){
 		if (other.gameObject.tag == "player") {
-			Debug.Log ("Byby");
+			//Debug.Log ("Byby");
 			agent.Resume ();
 		}
 	}

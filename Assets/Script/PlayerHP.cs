@@ -26,7 +26,7 @@ public class PlayerHP : MonoBehaviour {
 	void Update () {
 		lifeText.text = "寿命: " + life.ToString ();
 		if (life == 0) {
-			//SceneManager.LoadScene("GameOver");
+			SceneManager.LoadScene("GameOver");
 		}
 	}
 

@@ -11493,6 +11493,50 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SaveButton
       objectReference: {fileID: 0}
+    - target: {fileID: 114265457892814310, guid: e215afa54978344bfab892b1326efea4,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0.99215686
+      objectReference: {fileID: 0}
+    - target: {fileID: 114265457892814310, guid: e215afa54978344bfab892b1326efea4,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0.4745098
+      objectReference: {fileID: 0}
+    - target: {fileID: 114265457892814310, guid: e215afa54978344bfab892b1326efea4,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114688892152544138, guid: e215afa54978344bfab892b1326efea4,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0.99215686
+      objectReference: {fileID: 0}
+    - target: {fileID: 114688892152544138, guid: e215afa54978344bfab892b1326efea4,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0.4745098
+      objectReference: {fileID: 0}
+    - target: {fileID: 114688892152544138, guid: e215afa54978344bfab892b1326efea4,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4948267779132922, guid: e215afa54978344bfab892b1326efea4, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -149
+      objectReference: {fileID: 0}
+    - target: {fileID: 224703142916276778, guid: e215afa54978344bfab892b1326efea4,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 499
+      objectReference: {fileID: 0}
+    - target: {fileID: 224703142916276778, guid: e215afa54978344bfab892b1326efea4,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 206
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e215afa54978344bfab892b1326efea4, type: 2}
   m_IsPrefabParent: 0

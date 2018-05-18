@@ -119,7 +119,7 @@ public class SelectButtonScript3 : MonoBehaviour {
 		//enemy.SendMessage("Recover");
 		if (flag == 1) {
 			audioYes.Play();
-			Debug.Log ("1");
+			//Debug.Log ("1");
 			enemy.SendMessage ("Damage2");
 			ChangeWord2 ();
 			flag = 2;
@@ -176,7 +176,7 @@ public class SelectButtonScript3 : MonoBehaviour {
 	public void Button2(){
 		if (flag == 0) {
 			audioYes.Play();
-			Debug.Log ("2");
+			//Debug.Log ("2");
 			enemy.SendMessage ("Damage2");
 			ChangeWord ();
 			flag = 1;

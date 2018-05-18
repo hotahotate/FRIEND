@@ -23,7 +23,7 @@ public class BossScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (TextController.bossFlag) {
-			Debug.Log("Hello");
+			//Debug.Log("Hello");
 			SceneManager.LoadScene ("Battle3");
 		}
 	}
@@ -35,7 +35,7 @@ public class BossScript : MonoBehaviour {
 
 			heart.transform.position = gameObject.transform.position + new Vector3 (-0.5f, 1f, 0);
 			heart.SetActive (true);
-			Debug.Log ("OK");
+			//Debug.Log ("OK");
 		}
 	}
 

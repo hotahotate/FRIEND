@@ -47,7 +47,7 @@ public class TextController : MonoBehaviour {
 			if (currentLine < scenarios2.Length) {
 				
 				TextUpdate ();
-				Debug.Log ("uhh");
+				//Debug.Log ("uhh");
 			} else {
 					//問題点:最後の行の文字列が表示されずに終了する
 					uiText.gameObject.SetActive (false);

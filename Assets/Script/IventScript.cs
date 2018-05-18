@@ -22,7 +22,7 @@ public class IventScript : MonoBehaviour {
 	public void AButton(){
 		if (flag2) {
 			textController.StartText (scenarios2);
-			Debug.Log("hogehoge");
+			//Debug.Log("hogehoge");
 			flag2 = false;
 		}
 	}

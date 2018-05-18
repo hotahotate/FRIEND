@@ -58,7 +58,7 @@ public class SubMoveMobile : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		Debug.Log (EndFlag);
+		//Debug.Log (EndFlag);
 		if (push) {
 			GoButton ();
 		}
@@ -97,7 +97,7 @@ public class SubMoveMobile : MonoBehaviour {
 
 	public void GoButton(){
 		if (GoFlag) {
-			Debug.Log ("aruitta");
+			//Debug.Log ("aruitta");
 			//animator.SetBool ("Idle", false);
 			//animator.SetBool ("Walk", true);
 			player.SendMessage("GoAnim");

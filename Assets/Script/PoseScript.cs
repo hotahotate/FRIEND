@@ -70,7 +70,7 @@ public class PoseScript : MonoBehaviour {
 
 	public void Flag(int flag){
 		if (flag == 1) {
-			Debug.Log ("diary1");
+			//Debug.Log ("diary1");
 			diary1 = true;
 		}
 		else if(flag==2){

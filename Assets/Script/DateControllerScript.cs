@@ -34,7 +34,7 @@ public class DateControllerScript : MonoBehaviour {
 		PlayerPrefs.SetString(sceneNo,SceneManager.GetActiveScene().name);
 		//PlayerPrefs.SetInt (key3, PoseScript.diary1);
 
-		Debug.Log (SceneManager.GetActiveScene ().name);
+		//Debug.Log (SceneManager.GetActiveScene ().name);
 	}
 
 	public void LoadButton(){

@@ -22,7 +22,7 @@ public class PlayerAnim : MonoBehaviour {
 		count++;
 		animator.SetBool ("Walk", true);
 		animator.SetBool ("Idle", false);
-		Debug.Log ("count.ToString()");
+		//Debug.Log ("count.ToString()");
 	}
 
 	void IdleAnim(){
